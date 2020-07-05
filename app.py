@@ -104,10 +104,11 @@ def load_dataset():
         dep_label = tf.one_hot(labels[2], max_cat)
         return img, (type_label, med_label, dep_label)
     num_total = len(image_files)
-    train_image_files, valid_image_files, train_label_list, valid_label_list = train_test_split(image_files, label_list,
-                                                                                                stratify=[l[0] for l in label_list],
-                                                                                                test_size=16/num_total,
-                                                                                                random_state=42)
+    splits = pickle.load( open( "splits.pickle", "rb" ) )
+    train_image_files = splits["train_image_files"]
+    valid_image_files = splits["valid_image_files"]
+    train_label_list = splits["train_label_list"]
+    valid_label_list = splits["valid_label_list"]
     num_train = len(train_image_files)
     num_valid = len(valid_image_files)
     train_dataset = []
