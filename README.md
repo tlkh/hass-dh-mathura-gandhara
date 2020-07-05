@@ -17,5 +17,5 @@ nohup sudo streamlit run app.py --server.port 80 &
 
 ## Screenshot
 
-![screenshot](screenshot.JPG)
+![screenshot](screenshot.jpg)
 
