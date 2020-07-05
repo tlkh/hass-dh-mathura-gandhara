@@ -107,7 +107,7 @@ def load_dataset():
     train_image_files, valid_image_files, train_label_list, valid_label_list = train_test_split(image_files, label_list,
                                                                                                 stratify=[l[0] for l in label_list],
                                                                                                 test_size=16/num_total,
-                                                                                                random_state=1337)
+                                                                                                random_state=42)
     num_train = len(train_image_files)
     num_valid = len(valid_image_files)
     train_dataset = []
